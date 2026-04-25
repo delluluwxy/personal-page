@@ -4,454 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xiaoying Wang</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --teal:    #0f9999;
-      --teal-lt: #e0f5f5;
-      --coral:   #e05c5c;
-      --coral-lt:#fdeaea;
-      --gold:    #e0a030;
-      --gold-lt: #fdf4e0;
-      --ink:     #1a1a2e;
-      --gray:    #6b7280;
-      --bg:      #f8f9fb;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.75;
-    }
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ── Header stripe ── */
-    .top-stripe {
-      height: 6px;
-      background: linear-gradient(90deg, var(--teal) 0%, #4ecdc4 35%, var(--gold) 65%, var(--coral) 100%);
-    }
-
-    /* ── Nav ── */
-    nav {
+      margin: 0;
       background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 56px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
     }
-    .nav-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--ink);
-    }
-    .nav-links { display: flex; gap: 24px; }
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--gray);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .nav-links a:hover { color: var(--teal); text-decoration: none; }
 
-    /* ── Hero ── */
-    .hero {
-      background: #fff;
-      padding: 64px 24px 56px;
-      text-align: center;
-      position: relative;
+    a {
+      color: #0645ad;
+      text-decoration: none;
     }
-    .hero-blob {
-      position: absolute;
-      top: -40px; left: 50%;
-      transform: translateX(-50%);
-      width: 500px; height: 400px;
-      background: radial-gradient(ellipse at center, rgba(15,153,153,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .avatar-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 24px;
-    }
-    .avatar {
-      width: 148px;
-      height: 148px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      border: 4px solid #fff;
-      box-shadow: 0 8px 32px rgba(15,153,153,0.18);
-    }
-    .status-dot {
-      position: absolute;
-      bottom: 10px; right: 10px;
-      width: 18px; height: 18px;
-      background: #22c55e;
-      border: 3px solid #fff;
-      border-radius: 50%;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-    .hero .zh {
-      font-size: 1rem;
-      color: var(--gray);
-      margin-bottom: 16px;
-    }
-    .hero .tagline {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-    .hero .affil-line {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 24px;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 16px;
-      border-radius: 100px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .pill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); text-decoration: none; }
-    .pill-teal    { background: var(--teal-lt);  color: var(--teal); }
-    .pill-gold    { background: var(--gold-lt);  color: var(--gold); }
-    .pill-coral   { background: var(--coral-lt); color: var(--coral); }
 
-    /* ── Section ── */
-    .section-wrap {
-      max-width: 860px;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 920px;
       margin: 0 auto;
-      padding: 56px 24px 0;
-    }
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 24px;
-    }
-    .section-label .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--teal);
+      padding: 34px 24px 48px;
     }
 
-    /* ── About card ── */
-    .about-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 28px 32px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      margin-bottom: 56px;
-      font-size: 0.95rem;
-      color: #374151;
-      line-height: 1.8;
-    }
-    .about-card p + p { margin-top: 10px; }
-
-    /* ── Research area chips ── */
-    .interest-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .chip {
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      background: var(--teal-lt);
-      color: var(--teal);
+    nav {
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 15px;
     }
 
-    /* ── Pub card ── */
-    .pub-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      overflow: hidden;
-      margin-bottom: 56px;
-      display: flex;
-      transition: box-shadow 0.2s;
+    nav a {
+      margin-right: 18px;
+      color: #333;
     }
-    .pub-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-    .pub-accent-bar {
-      width: 6px;
-      min-width: 6px;
-      background: linear-gradient(180deg, var(--teal) 0%, #4ecdc4 100%);
+
+    .intro {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: start;
     }
-    .pub-body { padding: 28px 28px 24px; flex: 1; }
-    .pub-chips { display: flex; gap: 8px; margin-bottom: 12px; }
-    .pub-chip {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      background: var(--teal-lt);
-      color: var(--teal);
+
+    .portrait {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 1px solid #ddd;
     }
-    .pub-chip.venue {
-      background: var(--gold-lt);
-      color: var(--gold);
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.2;
     }
-    .pub-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: var(--ink);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .pub-authors {
-      font-size: 0.85rem;
-      color: var(--gray);
-      margin-bottom: 16px;
-    }
-    .pub-authors strong { color: var(--ink); }
-    .pub-abstract {
-      font-size: 0.87rem;
+
+    .name-cn {
+      margin-bottom: 12px;
       color: #555;
-      line-height: 1.7;
-      margin-bottom: 16px;
-      max-height: 84px;
-      overflow: hidden;
-      position: relative;
+      font-size: 18px;
     }
-    .pub-abstract::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 28px;
-      background: linear-gradient(transparent, #fff);
-    }
-    .pub-btns { display: flex; gap: 10px; flex-wrap: wrap; }
-    .pub-btn {
-      padding: 6px 18px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      transition: all 0.15s;
-    }
-    .pub-btn-primary {
-      background: var(--teal);
-      color: #fff;
-    }
-    .pub-btn-primary:hover { background: #0b7c7c; text-decoration: none; }
-    .pub-btn-outline {
-      border: 2px solid var(--teal);
-      color: var(--teal);
-    }
-    .pub-btn-outline:hover { background: var(--teal-lt); text-decoration: none; }
 
-    /* ── Education ── */
-    .edu-row {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 56px;
+    .role {
+      margin: 0 0 12px;
     }
-    .edu-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px 24px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      transition: box-shadow 0.2s;
+
+    .links {
+      margin-top: 12px;
+      font-size: 15px;
     }
-    .edu-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
-    .edu-icon {
-      width: 52px;
-      height: 52px;
-      min-width: 52px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    .links a {
+      margin-right: 12px;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ddd;
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 600;
     }
-    .edu-icon.ms { background: var(--coral-lt); color: var(--coral); }
-    .edu-icon.bs { background: #e0eaff; color: #4b5bab; }
-    .edu-info {}
-    .edu-degree {
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: var(--ink);
+
+    p {
+      margin: 0 0 12px;
     }
-    .edu-school {
-      font-size: 0.85rem;
-      color: var(--gray);
+
+    .interests {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+      margin-bottom: 18px;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-authors,
+    .pub-venue {
+      color: #444;
+    }
+
+    .pub-links {
+      font-size: 15px;
+    }
+
+    .education-item {
+      margin-bottom: 12px;
+    }
+
+    .degree {
+      font-weight: 600;
     }
 
     footer {
-      text-align: center;
-      padding: 40px 24px;
-      font-size: 0.8rem;
-      color: var(--gray);
-      margin-top: 24px;
-    }
-    footer .footer-strip {
-      width: 48px;
-      height: 4px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      margin: 0 auto 16px;
+      margin-top: 42px;
+      padding-top: 12px;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 14px;
     }
 
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 1.9rem; }
-      .nav-links { display: none; }
+    @media (max-width: 680px) {
+      .page {
+        padding: 24px 18px 40px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        width: 150px;
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
-<div class="top-stripe"></div>
+  <main class="page">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+    </nav>
 
-<!-- ── Nav ── -->
-<nav>
-  <div class="nav-name">Xiaoying Wang</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#education">Education</a>
-  </div>
-</nav>
+    <header class="intro">
+      <img class="portrait" src="avatar_v6.jpg" alt="Xiaoying Wang">
+      <div>
+        <h1>Xiaoying Wang</h1>
+        <div class="name-cn">王筱盈</div>
+        <p class="role">
+          Research Assistant at the
+          <a href="https://www.math.ucla.edu/aivc/" target="_blank">UCLA Artificial Intelligence &amp; Visual Computing (AIVC) Lab</a>,
+          directed by <a href="https://www.math.ucla.edu/~cffjiang/" target="_blank">Prof. Chenfanfu Jiang</a>
+          and supervised by <a href="https://yingjiang96.github.io/" target="_blank">Ying Jiang</a>.
+        </p>
+        <p>
+          My research interests include computer vision and generative AI, with a focus on
+          2D/3D content generation, geometry deformation, and depth estimation.
+        </p>
+        <div class="links">
+          <a href="mailto:delluluwxy@gmail.com">Email</a>
+        </div>
+      </div>
+    </header>
 
-<!-- ── Hero ── -->
-<div class="hero">
-  <div class="hero-blob"></div>
-  <div class="avatar-wrap">
-    <img class="avatar" src="avatar_v6.jpg" alt="Xiaoying Wang">
-    <div class="status-dot" title="Open to collaborate"></div>
-  </div>
-  <h1>Xiaoying Wang</h1>
-  <div class="zh">王筱盈</div>
-  <div class="tagline">Research Assistant at UCLA</div>
-  <div class="affil-line">
-    <a href="https://www.math.ucla.edu/aivc/" target="_blank">AI &amp; Visual Computing Laboratory</a>
-    &nbsp;·&nbsp;
-    Directed by Prof. Chenfanfu Jiang
-    &nbsp;·&nbsp;
-    Supervised by <a href="https://yingjiang96.github.io/" target="_blank">Ying Jiang</a>
-  </div>
-</div>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am an M.S. student in Multimedia and Creative Technologies at the
+        University of Southern California. I received my B.Sc. in Computer Science
+        (Artificial Intelligence) from the University of Nottingham Ningbo China.
+      </p>
+      <ul class="interests">
+        <li>Computer Vision</li>
+        <li>2D/3D Generation</li>
+        <li>Geometry Deformation</li>
+        <li>Depth Estimation</li>
+      </ul>
+    </section>
 
-<!-- ── About ── -->
-<div class="section-wrap" id="about">
-  <div class="section-label"><span class="dot"></span>About Me</div>
-  <div class="about-card">
-    <p>
-      Hi! I'm a Research Assistant at the
-      <a href="https://www.math.ucla.edu/aivc/" target="_blank">UCLA Artificial Intelligence &amp; Visual Computing (AIVC) Laboratory</a>,
-      directed by Prof. Chenfanfu Jiang, and supervised by
-      <a href="https://yingjiang96.github.io/" target="_blank">Ying Jiang</a>.
-    </p>
-    <p>
-      My research interests span computer vision and generative AI,
-      including 2D/3D content generation, geometry deformation, and depth estimation.
-    </p>
-    <p>
-      I hold an M.S. in Multimedia and Creative Technologies from <strong>USC</strong>
-      and a B.Sc. in Computer Science (AI) from the <strong>University of Nottingham Ningbo China</strong>.
-    </p>
-    <div class="interest-chips">
-      <span class="chip">Computer Vision</span>
-      <span class="chip">2D Generation</span>
-      <span class="chip">3D Generation</span>
-      <span class="chip">3D Deformation</span>
-      <span class="chip">Depth Estimation</span>
-      <span class="chip">Transparent Objects</span>
-    </div>
-  </div>
-</div>
+    <section id="research">
+      <h2>Research</h2>
+      <div class="publication">
+        <div class="pub-title">SeeClear: Reliable Transparent Object Depth Estimation via Generative Opacification</div>
+        <div class="pub-authors">
+          <strong>Xiaoying Wang</strong>*, Yumeng He*, Jingkai Shi*, Jiayin Lu, Yin Yang, Ying Jiang, Chenfanfu Jiang
+        </div>
+        <div class="pub-venue">arXiv, 2026. * Equal contribution.</div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2603.19547" target="_blank">[Paper]</a>
+          <a href="https://heyumeng.com/SeeClear-web/" target="_blank">[Project Page]</a>
+        </div>
+      </div>
+    </section>
 
-<!-- ── Research ── -->
-<div class="section-wrap" id="research">
-  <div class="section-label"><span class="dot"></span>Research</div>
-  <div class="pub-card">
-    <div class="pub-accent-bar"></div>
-    <div class="pub-body">
-      <div class="pub-chips">
-        <span class="pub-chip">Computer Vision</span>
-        <span class="pub-chip venue">arXiv 2026</span>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="degree">M.S. Multimedia and Creative Technologies</div>
+        <div>University of Southern California, Jan. 2024 - Dec. 2025</div>
       </div>
-      <div class="pub-title">SeeClear: Reliable Transparent Object Depth Estimation via Generative Opacification</div>
-      <div class="pub-authors">
-        <strong>Xiaoying Wang</strong>*, Yumeng He*, Jingkai Shi*, Jiayin Lu, Yin Yang, Ying Jiang, Chenfanfu Jiang
-        <br><small>* Equal contribution</small>
+      <div class="education-item">
+        <div class="degree">B.Sc. Computer Science (Artificial Intelligence)</div>
+        <div>University of Nottingham Ningbo China, 2019 - 2023</div>
       </div>
-      <div class="pub-abstract">
-        Transparent objects pose unique challenges for depth estimation due to refraction and
-        light transmission effects that confound standard sensors and neural methods. We propose
-        a diffusion-based generative pipeline that converts transparent materials into geometrically
-        consistent opaque shapes, enabling off-the-shelf depth estimators to produce reliable results
-        without retraining. We also introduce SeeClear-396k, a large-scale synthetic dataset of
-        paired transparent–opaque renderings for training.
-      </div>
-      <div class="pub-btns">
-        <a class="pub-btn pub-btn-primary" href="https://arxiv.org/abs/2603.19547" target="_blank">📄 Paper</a>
-        <a class="pub-btn pub-btn-outline" href="https://heyumeng.com/SeeClear-web/" target="_blank">🌐 Project Page</a>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- ── Education ── -->
-<div class="section-wrap" id="education">
-  <div class="section-label"><span class="dot"></span>Education</div>
-  <div class="edu-row">
-    <div class="edu-card">
-      <div class="edu-icon ms">M</div>
-      <div class="edu-info">
-        <div class="edu-degree">M.S. Multimedia and Creative Technologies</div>
-        <div class="edu-school">University of Southern California (USC) &nbsp;·&nbsp; Jan 2024 – Dec 2025</div>
-      </div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon bs">B</div>
-      <div class="edu-info">
-        <div class="edu-degree">B.Sc. Computer Science (Artificial Intelligence)</div>
-        <div class="edu-school">University of Nottingham Ningbo China &nbsp;·&nbsp; 宁波诺丁汉大学 &nbsp;·&nbsp; 2019 – 2023</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-strip"></div>
-  © 2026 Xiaoying Wang &nbsp;·&nbsp; delluluwxy@gmail.com
-</footer>
+    <footer>
+      Last updated: April 2026
+    </footer>
+  </main>
 </body>
 </html>
