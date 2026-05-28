@@ -99,17 +99,22 @@
 
     .publication {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-      margin-bottom: 26px;
+      grid-template-columns: 210px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 24px;
     }
 
     .pub-image {
-      width: 100%;
-      height: auto;
-      margin-bottom: 8px;
+      width: 210px;
+      height: 92px;
+      object-fit: cover;
       border: 1px solid #e5e5e5;
       display: block;
+    }
+
+    .pub-details {
+      min-width: 0;
     }
 
     .pub-title {
@@ -154,6 +159,15 @@
         width: 150px;
         height: 150px;
       }
+
+      .publication {
+        grid-template-columns: 1fr;
+      }
+
+      .pub-image {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -189,25 +203,29 @@
       <h2>Research</h2>
       <div class="publication">
         <img class="pub-image" src="fishbone.png" alt="Fishbone visual examples">
-        <div class="pub-title">Fishbone: From One 3D Asset to a Million Controllable Edits</div>
-        <div class="pub-authors">
-          Yumeng He, <strong>Xiaoying Wang</strong>, Peihao Li, Yanjia Huang, Joe Masterjohn, Jiajun Wu, Leonidas Guibas, Yin Yang, Ying Jiang, Chenfanfu Jiang
-        </div>
-        <div class="pub-venue">arXiv, 2026.</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2605.24805" target="_blank">[arXiv]</a>
+        <div class="pub-details">
+          <div class="pub-title">Fishbone: From One 3D Asset to a Million Controllable Edits</div>
+          <div class="pub-authors">
+            Yumeng He, <strong>Xiaoying Wang</strong>, Peihao Li, Yanjia Huang, Joe Masterjohn, Jiajun Wu, Leonidas Guibas, Yin Yang, Ying Jiang, Chenfanfu Jiang
+          </div>
+          <div class="pub-venue">arXiv, 2026.</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.24805" target="_blank">[Paper]</a>
+          </div>
         </div>
       </div>
       <div class="publication">
         <img class="pub-image" src="seeclear.png" alt="SeeClear transparent object depth estimation examples">
-        <div class="pub-title">SeeClear: Reliable Transparent Object Depth Estimation via Generative Opacification</div>
-        <div class="pub-authors">
-          <strong>Xiaoying Wang</strong>*, Yumeng He*, Jingkai Shi*, Jiayin Lu, Yin Yang, Ying Jiang, Chenfanfu Jiang
-        </div>
-        <div class="pub-venue">arXiv, 2026. * Equal contribution.</div>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2603.19547" target="_blank">[Paper]</a>
-          <a href="https://heyumeng.com/SeeClear-web/" target="_blank">[Project Page]</a>
+        <div class="pub-details">
+          <div class="pub-title">SeeClear: Reliable Transparent Object Depth Estimation via Generative Opacification</div>
+          <div class="pub-authors">
+            <strong>Xiaoying Wang</strong>*, Yumeng He*, Jingkai Shi*, Jiayin Lu, Yin Yang, Ying Jiang, Chenfanfu Jiang
+          </div>
+          <div class="pub-venue">arXiv, 2026. * Equal contribution.</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2603.19547" target="_blank">[Paper]</a>
+            <a href="https://heyumeng.com/SeeClear-web/" target="_blank">[Project Page]</a>
+          </div>
         </div>
       </div>
     </section>
